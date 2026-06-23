@@ -15,10 +15,13 @@ make apply                 # your real model on full 1,033-row tech-news corpus
 
 ## TODO for learner — fill these in before submitting
 
-- **Hugging Face Hub model URL:** _(paste your HF Hub model URL here, e.g. `https://huggingface.co/<your-username>/m7-app-review-sentiment`)_
+- **Hugging Face Hub model URL:** https://huggingface.co/MrMarwans/m7-app-review-sentiment
 - **Reproducibility command:** `cp .env.example .env` (set MODEL_HUB_ID), then `make apply`.
 - **What the model was trained on and why we're applying it here:**
-  _(1–2 paragraphs from the learner — what the app-review sentiment model was trained on, why we're testing it on tech / entertainment news, what we expect to learn about domain shift)_
+
+The model was trained in Lab 7A on 7,472 consumer app reviews across 9 mobile applications, predicting three sentiment classes: `negative`, `neutral`, and `positive`. The training data consists of short, opinionated texts written by users rating apps — reviewers either praise an app enthusiastically or complain about bugs and poor experience, with a smaller neutral class for mixed feedback.
+
+In this integration task, we apply the same model to 1,033 tech and entertainment news articles from CNN. News prose is fundamentally different: it is written by journalists, uses formal language, describes events without personal opinion, and regularly covers negative events such as crime, arrests, and lawsuits in a neutral, descriptive tone. The gap between consumer micro-opinions and professional news reporting is exactly the domain shift we analyze in `domain-shift-analysis.md` — the goal is to understand where the model generalizes and where it breaks.
 
 ## Submission
 
